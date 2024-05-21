@@ -3,8 +3,8 @@ import {Link, useNavigate} from "react-router-dom";
 import { AuthContext } from '../contexts/AuthContext';
 
 function Login() {
+  
     const {login} = useContext(AuthContext);
-
     const navigate = useNavigate();
 
     function handleClick(event) {
