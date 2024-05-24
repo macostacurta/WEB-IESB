@@ -5,7 +5,7 @@ npm init -y
 
 npm install json-server
 
----- db.json
+criar arquivo "db.json" 
 
 {
     "contatos": [
@@ -15,3 +15,5 @@ npm install json-server
 
 
 npx json-server db.json
+
+dentro do thudner cliente no body vc consegue adicionar novas coisas

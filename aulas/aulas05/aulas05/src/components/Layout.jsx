@@ -5,8 +5,8 @@ import { AuthContext } from "../contexts/AuthContext";
 
 
 function Layout() {
+    
     const {logout} = useContext(AuthContext);
-
     const navigate = useNavigate();
 
     function handleClick (event){
