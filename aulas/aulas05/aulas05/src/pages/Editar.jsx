@@ -1,22 +1,32 @@
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ContatoContext } from "../contexts/ContatoContext";
 
-function Novo() {
+function Editar() {
   const navigate = useNavigate();
+  const { id } = useParams();
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
-  const { inserirContato } = useContext(ContatoContext);
+  const { alterarContato, consultarContato } = useContext(ContatoContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
-    await inserirContato({ nome, telefone });
+    await alterarContato({ id, nome, telefone });
     navigate("/");
   }
 
+  useEffect(() => {
+    async function carregaDados() {
+      const result = await consultarContato(id);
+      setNome(result.nome);
+      setTelefone(result.telefone);    
+    }
+    carregaDados();
+  }, []);
+
   return (
     <>
-      <h1>Novo Contato</h1>
+      <h1>Editar Contato</h1>
       <form onSubmit={handleSubmit}>
         <input
           name="nome"
@@ -36,4 +46,4 @@ function Novo() {
   );
 }
 
-export default Novo;
+export default Editar;
