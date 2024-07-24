@@ -1,4 +1,4 @@
-como abrir uma "api" com o thunder client e json
+Pequeno guia de como abrir uma "api" teste com o thunder client e json
 
 
 npm init -y

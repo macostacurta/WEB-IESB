@@ -1,0 +1,1 @@
+Para que esse xemplo de aula funcione corretamente é preciso ter o thunder client e rodar o server da aula06
